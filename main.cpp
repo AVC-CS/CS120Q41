@@ -1,11 +1,13 @@
 #include <iostream>
 #include <iomanip>
+#include <cmath>
 using namespace std;
 
 int main()
 {
+    const double PI = 3.14159265358979;
     int choice;
-    double width, height, radius;
+    double width, height, radius, base;
     double area;
 
     cout << "Geometry Calculator\n";
@@ -16,13 +18,29 @@ int main()
     cout << "Enter your choice (1-4): ";
     cin >> choice;
 
-    /*
-    Code your program here
-    Use switch statement
+    // TODO
+    if (choice == 1) {
+        cout << "Enter the radius: ";
+        cin >> radius;
+        area = PI * radius * radius;
+    } else if (choice == 2) {
+        cout << "Enter the length and width: ";
+        cin >> height >> width;
+        area = height * width;
+    } else if (choice == 3) {
+        cout << "Enter the base and height: ";
+        cin >> base >> height;
+        area = base * height * 0.5;
+    } else if (choice == 4) {
+        cout << "Quitting\n";
+        return 0;
+    } else {
+        cout << "Wrong number\n";
+        return 0;
+    }
 
-    */
-
-    // Use the following print statements to print the output
     cout << left << setprecision(2) << fixed;
     cout << "The area is " << area << endl;
+
+    return 0;
 }
